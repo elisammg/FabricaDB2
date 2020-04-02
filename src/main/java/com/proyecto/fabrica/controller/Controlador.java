@@ -29,7 +29,7 @@ public class Controlador {
 
     @GetMapping("/new")
     public String agregar(Model modelo){
-        modelo.addAttribute("cliente", new Clientes());
+        modelo.addAttribute("clientes", new Clientes());
         return "form";
     }
 
