@@ -19,10 +19,10 @@
         </thead>
         <tbody>
             <tr th:each="cliente:${clientes}">
-                <td>${cliente.id}</td>
-                <td>${cliente.nombre}</td>
-                <td>${cliente.direccion}</td>
-                <td>${cliente.telefono}</td>
+                <td th:text="${cliente.id}"></td>
+                <td th:text="${cliente.nombre}"></td>
+                <td th:text="${cliente.direccion}"></td>
+                <td th:text="${cliente.telefono}"></td>
                 <td>
                     <a class="btn btn-warning">Editar</a>
                     <a class="btn btn-danger">Eliminar</a>

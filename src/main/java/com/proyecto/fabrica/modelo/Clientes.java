@@ -5,8 +5,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.annotation.processing.Generated;
 
-@Document(collection = "cliente")
-public class Cliente {
+@Document(collection = "clientes")
+public class Clientes {
     @Id
     private String id;
 
@@ -14,10 +14,10 @@ public class Cliente {
     private String direccion;
     private String telefono;
 
-    public Cliente () {
+    public Clientes () {
 
         }
-        public Cliente(String nombre, String direccion, String telefono)
+        public Clientes(String nombre, String direccion, String telefono)
         {
             this.nombre = nombre;
             this.direccion = direccion;
@@ -59,7 +59,7 @@ public class Cliente {
     @Override
     public String toString()
     {
-        return "Cliente [id = "+ id +", nombre="+ nombre +", direccion="+ direccion +", telefono="+ telefono +"]";
+        return "cliente [id = "+ id +", nombre="+ nombre +", direccion="+ direccion +", telefono="+ telefono +"]";
     }
 }
 

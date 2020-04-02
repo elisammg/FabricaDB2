@@ -1,7 +1,7 @@
 package com.proyecto.fabrica.controller;
 
 import com.proyecto.fabrica.interfaceService.IClienteService;
-import com.proyecto.fabrica.modelo.Cliente;
+import com.proyecto.fabrica.modelo.Clientes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,7 +20,7 @@ public class Controlador {
     @GetMapping("/listar")
     public String listar(Model model)
     {
-        List<Cliente>clientes=service.listar();
+        List<Clientes>clientes=service.listar();
         model.addAttribute("clientes", clientes);
         return "index";
     }

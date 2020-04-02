@@ -2,7 +2,7 @@ package com.proyecto.fabrica.service;
 
 import com.proyecto.fabrica.interfaceService.IClienteService;
 import com.proyecto.fabrica.interfaces.ICliente;
-import com.proyecto.fabrica.modelo.Cliente;
+import com.proyecto.fabrica.modelo.Clientes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,17 +15,17 @@ public class ClienteService implements IClienteService {
     @Autowired
     private ICliente data;
     @Override
-    public List<Cliente> listar() {
-        return (List<Cliente>) data.findAll();
+    public List<Clientes> listar() {
+        return (List<Clientes>) data.findAll();
     }
 
     @Override
-    public Optional<Cliente> listarId(String id) {
+    public Optional<Clientes> listarId(String id) {
         return Optional.empty();
     }
 
     @Override
-    public int save(Cliente c) {
+    public int save(Clientes c) {
         return 0;
     }
 
