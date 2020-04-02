@@ -16,12 +16,14 @@ public class ClienteService implements IClienteService {
     private ICliente data;
     @Override
     public List<Clientes> listar() {
+
         return (List<Clientes>) data.findAll();
     }
 
     @Override
     public Optional<Clientes> listarId(String id) {
-        return Optional.empty();
+
+        return data.findById(id);
     }
 
     @Override
@@ -36,6 +38,7 @@ public class ClienteService implements IClienteService {
 
     @Override
     public void delete(String id) {
+        data.deleteById(id);
 
     }
 }

@@ -6,7 +6,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
+
 <div class="container mt-4">
+    <h1>Fabrica de repuestos</h1>
+    <h2>Modulo de clientes - Tiendas</h2>
     <a th:href="@{/new}" class="btn btn-primary">Nuevo</a>
     <hr>
     <table class="table">
@@ -26,13 +29,19 @@
                 <td th:text="${cliente.direccion}"></td>
                 <td th:text="${cliente.telefono}"></td>
                 <td>
-                    <a class="btn btn-warning">Editar</a>
-                    <a class="btn btn-danger">Eliminar</a>
+                    <a class="btn btn-warning" th:href="@{/editar/}+${cliente.id}">Editar</a>
+                    <a class="btn btn-danger" th:onclick="eliminar([[${cliente.id}]])">Eliminar</a>
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
 
+<script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="funciones.js"></script>
 </body>
 </html>
