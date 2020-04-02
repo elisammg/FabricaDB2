@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -24,4 +26,17 @@ public class Controlador {
         model.addAttribute("clientes", clientes);
         return "index";
     }
+
+    @GetMapping("/new")
+    public String agregar(Model modelo){
+        modelo.addAttribute("cliente", new Clientes());
+        return "form";
+    }
+
+    @PostMapping("/save")
+    public String save(@Valid Clientes c, Model model){
+        service.save(c);
+        return "redirect:/listar";
+    }
+
 }

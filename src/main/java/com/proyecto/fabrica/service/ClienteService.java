@@ -26,7 +26,12 @@ public class ClienteService implements IClienteService {
 
     @Override
     public int save(Clientes c) {
-        return 0;
+        int res=0;
+        Clientes clientes=data.save(c);
+        if (clientes.equals(null)){
+            res=1;
+        }
+        return res;
     }
 
     @Override
