@@ -23,7 +23,7 @@ public class CarrosService implements ICarrosService {
 
     @Override
     public Optional<Carros> listarId(String id) {
-        return Optional.empty();
+        return data.findById(id);
     }
 
     @Override

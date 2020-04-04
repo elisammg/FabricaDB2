@@ -30,7 +30,7 @@
             <td th:text="${carro.linea}"></td>
             <td th:text="${carro.modelo}"></td>
             <td>
-                <a class="btn btn-warning">Editar</a>
+                <a class="btn btn-warning" th:href="@{/editarcarro/}+${carro.id}">Editar</a>
                 <a class="btn btn-danger">Eliminar</a>
             </td>
         </tr>
