@@ -49,4 +49,11 @@ public class ControllerCarros {
         modelo.addAttribute("carros", carros);
         return "carronuevo";
     }
+
+    @GetMapping("/eliminarcarro/{id}")
+    public String delete(Model modelo, @PathVariable String id)
+    {
+        service.delete(id);
+        return "redirect:/carros";
+    }
 }

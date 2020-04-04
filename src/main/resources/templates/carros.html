@@ -31,7 +31,7 @@
             <td th:text="${carro.modelo}"></td>
             <td>
                 <a class="btn btn-warning" th:href="@{/editarcarro/}+${carro.id}">Editar</a>
-                <a class="btn btn-danger">Eliminar</a>
+                <a class="btn btn-danger" th:href="@{/eliminarcarro/}+${carro.id}">Borrar</a>
             </td>
         </tr>
         </tbody>

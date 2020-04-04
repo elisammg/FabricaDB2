@@ -38,6 +38,6 @@ public class CarrosService implements ICarrosService {
 
     @Override
     public void delete(String id) {
-
+        data.deleteById(id);
     }
 }
