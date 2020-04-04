@@ -21,16 +21,21 @@ public class ProductosService implements IProductosService {
 
     @Override
     public Optional<Productos> listarId(String id) {
-        return Optional.empty();
+        return data.findById(id);
     }
 
     @Override
     public int save(Productos p) {
-        return 0;
+        int res=0;
+        Productos productos=data.save(p);
+        if (productos.equals(null)){
+            res=1;
+        }
+        return res;
     }
 
     @Override
     public void delete(String id) {
-
+        data.deleteById(id);
     }
 }

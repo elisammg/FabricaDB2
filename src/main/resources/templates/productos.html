@@ -2,18 +2,18 @@
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Listar Clientes</title>
+    <title>Listar Productos</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
 <div class="container mt-4">
     <h1>Fabrica de repuestos</h1>
-    <h2>Modulo de clientes - Tiendas</h2>
+    <h2>Modulo de Productos</h2>
     <a th:href="@{/carros}" class="btn btn-primary">Carros</a>
     <a th:href="@{/listar}" class="btn btn-primary">Clientes</a>
     <a th:href="@{/productos}" class="btn btn-primary">Productos</a>
     <hr>
-    <a th:href="@{/new}" class="btn btn-primary">Nuevo</a>
+    <a th:href="@{/productonuevo}" class="btn btn-primary">Producto Nuevo</a>
     <hr>
     <table class="table">
         <thead>
@@ -36,12 +36,13 @@
             <td th:text="${producto.cantidad}"></td>
             <td th:text="${producto.precio}"></td>
             <td>
-                <a class="btn btn-warning" >Editar</a>
-                <a class="btn btn-danger">Eliminar</a>
+                <a class="btn btn-warning" th:href="@{/editarproducto/}+${producto.id}">Editar</a>
+                <a class="btn btn-danger" th:href="@{/eliminarproducto/}+${producto.id}">Borrar</a>
             </td>
         </tr>
         </tbody>
     </table>
+
 
 </div>
 
