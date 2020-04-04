@@ -20,22 +20,26 @@
         <tr>
             <th>ID</th>
             <th>Nombre</th>
-            <th>Direccion</th>
-            <th>Telefono</th>
+            <th>Descripcion</th>
+            <th>Vehiculos</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
             <th>Acciones</th>
         </tr>
         </thead>
         <tbody>
-            <tr th:each="cliente:${clientes}">
-                <td th:text="${cliente.id}"></td>
-                <td th:text="${cliente.nombre}"></td>
-                <td th:text="${cliente.direccion}"></td>
-                <td th:text="${cliente.telefono}"></td>
-                <td>
-                    <a class="btn btn-warning" th:href="@{/editar/}+${cliente.id}">Editar</a>
-                    <a class="btn btn-danger" th:onclick="eliminar([[${cliente.id}]])">Eliminar</a>
-                </td>
-            </tr>
+        <tr th:each="producto:${productos}">
+            <td th:text="${producto.id}"></td>
+            <td th:text="${producto.nombre}"></td>
+            <td th:text="${producto.descripcion}"></td>
+            <td th:text="${producto.carros}"></td>
+            <td th:text="${producto.cantidad}"></td>
+            <td th:text="${producto.precio}"></td>
+            <td>
+                <a class="btn btn-warning" >Editar</a>
+                <a class="btn btn-danger">Eliminar</a>
+            </td>
+        </tr>
         </tbody>
     </table>
 
