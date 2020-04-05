@@ -1,0 +1,101 @@
+package com.proyecto.fabrica.modelo;
+
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.ArrayList;
+import java.util.Date;
+
+@Document(collection = "pedidos")
+public class Pedidos {
+
+    @Id
+    private String id;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date fecha_recibido;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date fecha_entrega;
+    private String estado;
+    private ArrayList<String> repuestos;
+    private ArrayList<String> clientes;
+    private int precio_final;
+
+    public Pedidos () {
+
+    }
+    public Pedidos (Date fecha_recibido, Date fecha_entrega, String estado, ArrayList<String> repuestos, ArrayList<String> clientes, int precio_final)
+    {
+        this.fecha_entrega = fecha_entrega;
+        this.fecha_recibido = fecha_recibido;
+        this.estado = estado;
+        this.repuestos = repuestos;
+        this.clientes = clientes;
+        this.precio_final = precio_final;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Date getFecha_recibido() {
+        return fecha_recibido;
+    }
+
+    public void setFecha_recibido(Date fecha_recibido) {
+        this.fecha_recibido = fecha_recibido;
+    }
+
+    public Date getFecha_entrega() {
+        return fecha_entrega;
+    }
+
+    public void setFecha_entrega(Date fecha_entrega) {
+        this.fecha_entrega = fecha_entrega;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public ArrayList<String> getRepuestos() {
+        return repuestos;
+    }
+
+    public void setRepuestos(ArrayList<String> repuestos) {
+        this.repuestos = repuestos;
+    }
+
+    public ArrayList<String> getClientes() {
+        return clientes;
+    }
+
+    public void setClientes(ArrayList<String> clientes) {
+        this.clientes = clientes;
+    }
+
+    public int getPrecio_final() {
+        return precio_final;
+    }
+
+    public void setPrecio_final(int precio_final) {
+        this.precio_final = precio_final;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "pedidos [id = "+ id +", fecha_recibido="+ fecha_recibido +", fecha_entrega="+ fecha_entrega +", estado="+ estado +", repuestos="+ repuestos +", clientes="+ clientes +", precio_final="+ precio_final +"]";
+
+    }
+
+}
