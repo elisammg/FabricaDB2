@@ -8,18 +8,47 @@
 <body>
 <div class="container mt-4">
     <div class="col-sm-6">
-        <ul class="list-group" th:object="${pedidos}">
-            <li class="list-group-item active" th:field="*{id}"></li>
-            <li class="list-group-item" th:field="*{fecha_recibido}"></li>
-            <li class="list-group-item" th:field="*{fecha_entrega}"></li>
-            <li class="list-group-item" th:field="*{estado}"></li>
-            <li class="list-group-item" th:field="*{repuestos}"></li>
-            <li class="list-group-item" th:field="*{clientes}"></li>
-            <li class="list-group-item" th:field="*{precio_final}"></li>
-        </ul>
-        <a th:href="@{/pedidos}" class="btn btn-primary">Regresar</a>
-        <a class="btn btn-warning" th:href="@{/editarpedido/}+${pedido.id}">Editar</a>
-        <a class="btn btn-danger" th:href="@{/eliminarpedido/}+${pedido.id}">Borrar</a>
+        <form th:action="@{/savepedido}" th:object="${pedidos}" method="post">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Pedidos</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Id</label>
+                        <input class="form-control" type="text" th:field="*{id}">
+                    </div>
+                    <div class="form-group">
+                        <label>Fecha de recibido</label>
+                        <input class="form-control" type="date" th:field="*{fecha_recibido}">
+                    </div>
+                    <div class="form-group">
+                        <label>Fecha de entrega</label>
+                        <input class="form-control" type="date" th:field="*{fecha_entrega}">
+                    </div>
+                    <div class="form-group">
+                        <label>Estado</label>
+                        <input class="form-control" type="text" th:field="*{estado}">
+                    </div>
+                    <div class="form-group">
+                        <label>Repuestos</label>
+                        <input class="form-control" type="text" th:field="*{repuestos}">
+                    </div>
+                    <div class="form-group">
+                        <label>Clientes</label>
+                        <input class="form-control" type="text" th:field="*{clientes}">
+                    </div>
+                    <div class="form-group">
+                        <label>Precio final</label>
+                        <input class="form-control" type="number" th:field="*{precio_final}">
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a th:href="@{/pedidos}" class="btn btn-primary">Regresar</a>
+                </div>
+            </div>
+
+        </form>
     </div>
 </div>
 
