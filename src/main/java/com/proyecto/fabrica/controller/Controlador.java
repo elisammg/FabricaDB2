@@ -26,7 +26,7 @@ public class Controlador {
     {
         List<Clientes>clientes=service.listar();
         model.addAttribute("clientes", clientes);
-        return "index";
+        return "clientes";
     }
 
     @GetMapping("/new")
@@ -38,7 +38,7 @@ public class Controlador {
     @PostMapping("/save")
     public String save(@Valid Clientes c, Model model){
         service.save(c);
-        return "redirect:/listar";
+        return "redirect:/clientes";
     }
 
     @GetMapping("/editar/{id}")
@@ -53,6 +53,6 @@ public class Controlador {
     public String delete(Model modelo, @PathVariable String id)
     {
         service.delete(id);
-        return "redirect:/listar";
+        return "redirect:/clientes";
     }
 }
