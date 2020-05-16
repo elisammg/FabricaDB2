@@ -23,7 +23,6 @@
             <th>Nombre</th>
             <th>Descripcion</th>
             <th>Vehiculos</th>
-            <th>Cantidad</th>
             <th>Precio</th>
             <th>Acciones</th>
         </tr>
@@ -34,7 +33,6 @@
             <td th:text="${producto.nombre}"></td>
             <td th:text="${producto.descripcion}"></td>
             <td th:text="${producto.carros}"></td>
-            <td th:text="${producto.cantidad}"></td>
             <td th:text="${producto.precio}"></td>
             <td>
                 <a class="btn btn-warning" th:href="@{/editarproducto/}+${producto.id}">Editar</a>

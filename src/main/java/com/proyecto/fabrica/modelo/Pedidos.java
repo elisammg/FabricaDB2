@@ -1,6 +1,7 @@
 package com.proyecto.fabrica.modelo;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -21,6 +22,7 @@ public class Pedidos {
     private ArrayList<String> repuestos;
     private ArrayList<String> clientes;
     private int precio_final;
+    private int cantidad;
 
     public Pedidos () {
 
@@ -34,6 +36,9 @@ public class Pedidos {
         this.clientes = clientes;
         this.precio_final = precio_final;
     }
+
+    @Autowired
+    Productos productos;
 
     public String getId() {
         return id;
@@ -68,11 +73,13 @@ public class Pedidos {
     }
 
     public ArrayList<String> getRepuestos() {
+
         return repuestos;
     }
 
     public void setRepuestos(ArrayList<String> repuestos) {
         this.repuestos = repuestos;
+
     }
 
     public ArrayList<String> getClientes() {
@@ -84,8 +91,18 @@ public class Pedidos {
     }
 
     public int getPrecio_final() {
+
         return precio_final;
     }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
 
     public void setPrecio_final(int precio_final) {
         this.precio_final = precio_final;
@@ -94,8 +111,9 @@ public class Pedidos {
     @Override
     public String toString()
     {
-        return "pedidos [id = "+ id +", fecha_recibido="+ fecha_recibido +", fecha_entrega="+ fecha_entrega +", estado="+ estado +", repuestos="+ repuestos +", clientes="+ clientes +", precio_final="+ precio_final +"]";
+        return "pedidos [id = "+ id +", fecha_recibido="+ fecha_recibido +", fecha_entrega="+ fecha_entrega +", estado="+ estado +", repuestos="+ repuestos +", clientes="+ clientes +", precio_final="+ precio_final +", cantidad =" + cantidad +"]";
 
     }
+
 
 }

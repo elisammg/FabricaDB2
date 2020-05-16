@@ -19,19 +19,19 @@
     <table class="table">
         <thead>
         <tr>
-            <th>ID</th>
             <th>Nombre</th>
             <th>Direccion</th>
             <th>Telefono</th>
+            <th>Dias de entrega</th>
             <th>Acciones</th>
         </tr>
         </thead>
         <tbody>
             <tr th:each="cliente:${clientes}">
-                <td th:text="${cliente.id}"></td>
                 <td th:text="${cliente.nombre}"></td>
                 <td th:text="${cliente.direccion}"></td>
                 <td th:text="${cliente.telefono}"></td>
+                <td th:text="${cliente.entrega}"></td>
                 <td>
                     <a class="btn btn-warning" th:href="@{/editar/}+${cliente.id}">Editar</a>
                     <a class="btn btn-danger" th:onclick="eliminar([[${cliente.id}]])">Eliminar</a>

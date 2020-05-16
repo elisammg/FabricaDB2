@@ -13,7 +13,6 @@ public class Productos {
     private String nombre;
     private String descripcion;
     private String carros;
-    private int cantidad;
     private int precio;
 
     public Productos () {
@@ -24,7 +23,6 @@ public class Productos {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.carros = carros;
-        this.cantidad = cantidad;
         this.precio = precio;
     }
 
@@ -60,13 +58,6 @@ public class Productos {
         this.carros = carros;
     }
 
-    public int getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
 
     public int getPrecio() {
         return precio;
