@@ -109,7 +109,8 @@ public class Pedidos {
 
 
     public void setPrecio_final(int precio_final) {
-        this.precio_final = 10;
+
+        this.precio_final = precio_final;
     }
 
     @Override
