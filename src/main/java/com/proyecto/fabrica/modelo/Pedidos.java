@@ -1,6 +1,7 @@
 package com.proyecto.fabrica.modelo;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -19,13 +20,14 @@ public class Pedidos {
     private Date fecha_entrega;
     private String estado;
     private ArrayList<String> repuestos;
-    private ArrayList<String> clientes;
+    private String clientes;
     private int precio_final;
+    private int cantidad;
 
     public Pedidos () {
 
     }
-    public Pedidos (Date fecha_recibido, Date fecha_entrega, String estado, ArrayList<String> repuestos, ArrayList<String> clientes, int precio_final)
+    public Pedidos (Date fecha_recibido, Date fecha_entrega, String estado, ArrayList<String> repuestos, String clientes, int precio_final)
     {
         this.fecha_entrega = fecha_entrega;
         this.fecha_recibido = fecha_recibido;
@@ -34,6 +36,9 @@ public class Pedidos {
         this.clientes = clientes;
         this.precio_final = precio_final;
     }
+
+    @Autowired
+    Productos productos;
 
     public String getId() {
         return id;
@@ -68,34 +73,51 @@ public class Pedidos {
     }
 
     public ArrayList<String> getRepuestos() {
+
         return repuestos;
     }
 
     public void setRepuestos(ArrayList<String> repuestos) {
         this.repuestos = repuestos;
+
     }
 
-    public ArrayList<String> getClientes() {
+    public String getClientes() {
+
         return clientes;
     }
 
-    public void setClientes(ArrayList<String> clientes) {
+    public void setClientes(String clientes) {
+
         this.clientes = clientes;
     }
 
     public int getPrecio_final() {
+
         return precio_final;
     }
 
+    public int getCantidad() {
+
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+
+        this.cantidad = cantidad;
+    }
+
+
     public void setPrecio_final(int precio_final) {
-        this.precio_final = precio_final;
+        this.precio_final = 10;
     }
 
     @Override
     public String toString()
     {
-        return "pedidos [id = "+ id +", fecha_recibido="+ fecha_recibido +", fecha_entrega="+ fecha_entrega +", estado="+ estado +", repuestos="+ repuestos +", clientes="+ clientes +", precio_final="+ precio_final +"]";
+        return "pedidos [id = "+ id +", fecha_recibido="+ fecha_recibido +", fecha_entrega="+ fecha_entrega +", estado="+ estado +", repuestos="+ repuestos +", clientes="+ clientes +", precio_final="+ precio_final +", cantidad =" + cantidad +"]";
 
     }
+
 
 }

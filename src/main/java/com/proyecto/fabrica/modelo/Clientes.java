@@ -4,6 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.annotation.processing.Generated;
+import java.text.DateFormat;
 
 @Document(collection = "clientes")
 public class Clientes {
@@ -13,15 +14,18 @@ public class Clientes {
     private String nombre;
     private String direccion;
     private String telefono;
+    private int entrega;
 
     public Clientes () {
 
         }
-        public Clientes(String nombre, String direccion, String telefono)
+        public Clientes(String nombre, String direccion, String telefono, int entrega)
         {
             this.nombre = nombre;
             this.direccion = direccion;
             this.telefono = telefono;
+            this.entrega = entrega;
+
         }
 
     public String getId() {
@@ -56,10 +60,20 @@ public class Clientes {
         this.telefono = telefono;
     }
 
+    public int getEntrega() {
+        return entrega;
+    }
+
+    public void setEntrega(int entrega) {
+        this.entrega = entrega;
+    }
+
     @Override
     public String toString()
     {
-        return "cliente [id = "+ id +", nombre="+ nombre +", direccion="+ direccion +", telefono="+ telefono +"]";
+        return "cliente [id = "+ id +", nombre="+ nombre +", direccion="+ direccion +", telefono="+ telefono +", entrega = "+ entrega +"]";
     }
+
+
 }
 
