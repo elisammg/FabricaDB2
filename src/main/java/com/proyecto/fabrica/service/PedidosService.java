@@ -2,7 +2,6 @@ package com.proyecto.fabrica.service;
 
 
 import com.proyecto.fabrica.interfaceService.IPedidosService;
-import com.proyecto.fabrica.interfaces.ICliente;
 import com.proyecto.fabrica.interfaces.IPedidos;
 import com.proyecto.fabrica.modelo.Pedidos;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,6 +46,7 @@ public class PedidosService implements IPedidosService {
 
     @Override
     public void delete(String id) {
+
         data.deleteById(id);
     }
 }

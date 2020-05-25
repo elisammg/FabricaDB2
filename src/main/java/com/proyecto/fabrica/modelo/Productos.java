@@ -14,17 +14,19 @@ public class Productos {
     private String descripcion;
     private String carros;
     private int precio;
+    private String imagenurl;
 
 
     public Productos () {
 
     }
-    public Productos(String nombre, String descripcion, String carros, int precio)
+    public Productos(String nombre, String descripcion, String carros, int precio, String imagenurl)
     {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.carros = carros;
         this.precio = precio;
+        this.imagenurl = imagenurl;
     }
 
     public String getId() {
@@ -65,6 +67,15 @@ public class Productos {
     }
 
     public void setPrecio(int precio) {
+        precio = precio * 10;
         this.precio = precio;
+    }
+
+    public String getImagenurl() {
+        return imagenurl;
+    }
+
+    public void setImagenurl(String imagenurl) {
+        this.imagenurl = imagenurl;
     }
 }

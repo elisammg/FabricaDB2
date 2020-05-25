@@ -7,8 +7,8 @@
 </head>
 <body>
 <div class="container mt-4">
-    <h1>Fabrica de repuestos</h1>
-    <h2>Modulo de clientes - Tiendas</h2>
+    <h1>Fabrica de repuestos GUATEMALA</h1>
+    <h2>Modulo de clientes</h2>
     <a th:href="@{/carros}" class="btn btn-primary">Carros</a>
     <a th:href="@{/listar}" class="btn btn-primary">Clientes</a>
     <a th:href="@{/productos}" class="btn btn-primary">Productos</a>
@@ -23,6 +23,7 @@
             <th>Direccion</th>
             <th>Telefono</th>
             <th>Dias de entrega</th>
+            <th>Constraseña</th>
             <th>Acciones</th>
         </tr>
         </thead>
@@ -32,6 +33,7 @@
                 <td th:text="${cliente.direccion}"></td>
                 <td th:text="${cliente.telefono}"></td>
                 <td th:text="${cliente.entrega}"></td>
+                <td th:text="${cliente.password}"></td>
                 <td>
                     <a class="btn btn-warning" th:href="@{/editar/}+${cliente.id}">Editar</a>
                     <a class="btn btn-danger" th:onclick="eliminar([[${cliente.id}]])">Eliminar</a>

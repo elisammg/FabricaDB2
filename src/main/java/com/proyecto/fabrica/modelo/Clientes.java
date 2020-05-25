@@ -15,16 +15,18 @@ public class Clientes {
     private String direccion;
     private String telefono;
     private int entrega;
+    private String password;
 
     public Clientes () {
 
         }
-        public Clientes(String nombre, String direccion, String telefono, int entrega)
+        public Clientes(String nombre, String direccion, String telefono, int entrega, String password)
         {
             this.nombre = nombre;
             this.direccion = direccion;
             this.telefono = telefono;
             this.entrega = entrega;
+            this.password = password;
 
         }
 
@@ -68,11 +70,20 @@ public class Clientes {
         this.entrega = entrega;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
     public String toString()
     {
-        return "cliente [id = "+ id +", nombre="+ nombre +", direccion="+ direccion +", telefono="+ telefono +", entrega = "+ entrega +"]";
+        return "cliente [id = "+ id +", nombre="+ nombre +", direccion="+ direccion +", telefono="+ telefono +", entrega = "+ entrega +", password = "+ password +"]";
     }
+
 
 
 }

@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="container mt-4">
-    <h1>Fabrica de repuestos</h1>
+    <h1>Fabrica de repuestos GUATEMALA</h1>
     <h2>Modulo de Productos</h2>
     <a th:href="@{/carros}" class="btn btn-primary">Carros</a>
     <a th:href="@{/listar}" class="btn btn-primary">Clientes</a>
@@ -24,6 +24,7 @@
             <th>Descripcion</th>
             <th>Vehiculos</th>
             <th>Precio</th>
+            <th>Imagen</th>
             <th>Acciones</th>
         </tr>
         </thead>
@@ -34,6 +35,7 @@
             <td th:text="${producto.descripcion}"></td>
             <td th:text="${producto.carros}"></td>
             <td th:text="${producto.precio}"></td>
+            <td><img th:src="@{${producto.imagenurl}}"></td>
             <td>
                 <a class="btn btn-warning" th:href="@{/editarproducto/}+${producto.id}">Editar</a>
                 <a class="btn btn-danger" th:href="@{/eliminarproducto/}+${producto.id}">Borrar</a>
